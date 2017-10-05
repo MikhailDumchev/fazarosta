@@ -1,0 +1,382 @@
+$borderColor: rgb(238, 238, 238);
+$headersColor: rgb(34, 34, 34);
+$articleInformationColor: rgb(153, 153, 153);
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "Hightway-extra-thin";
+    src: url("/fonts/Hightway-extra-thin.ttf");
+}
+@font-face {
+    font-family: "Hightway-thin";
+    src: url("/fonts/Hightway-thin.ttf");
+}
+@font-face {
+    font-family: "Hightway-light";
+    src: url("/fonts/Hightway-light.ttf");
+}
+@font-face {
+    font-family: "Hightway-medium";
+    src: url("/fonts/Hightway-medium.ttf");
+}
+.frame {
+    width: 98%;
+    max-width: 2040px;
+    min-width: 1020px;
+    margin: 0px auto;
+}
+.internal-frame {
+    padding: 30px 0px;
+    font-size: 0;
+    .column {
+        background-color: grey;
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+.additory-module {
+    display: table-cell;
+    vertical-align: middle;
+}
+.upper-menu {
+    border-bottom: 1px solid $borderColor;
+    .main-image {
+        display: block;
+        margin: 0px auto;
+    }
+    .column {
+        vertical-align: middle;
+    }
+}
+.icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(100, 100, 100);
+}
+.icon:not(:first-of-type) {
+    margin-left: 30px;
+}
+.button {
+    position: relative;
+    display: table;
+    width: 180px;
+    height: 40px;
+    font-size: 16px;
+    font-family: "Hightway-medium", arial, sans-serif;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background: #76ead5;
+    background: -moz-linear-gradient(left, #76ead5 0%, #3dc9de 51%, #0face6 100%);
+    background: -webkit-linear-gradient(left, #76ead5 0%,#3dc9de 51%,#0face6 100%);
+    background: linear-gradient(to right, #76ead5 0%,#3dc9de 51%,#0face6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76ead5', endColorstr='#0face6',GradientType=1 );
+    .additory-module {
+        padding-left: 40px;
+        text-align: center;
+        &:before {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            display: table;
+            width: 40px;
+            height: 40px;
+            content: "";
+            background-color: rgba(0, 0, 0, 0.1);
+            background-repeat: no-repeat;
+            background-position: 0px 50%;
+            background-image: url("../images/calendar.png");
+        }
+    }
+}
+.social-networks-module {
+    border-bottom: 1px solid $borderColor;
+    .social-networks-list {
+        width: 100%;
+        padding: 15px 0px 20px;
+        .column {
+            width: 20%;
+            .social-network-icon {
+                width: 25px;
+                height: 20px;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                &.facebook {
+                    background-image: url("../images/social-networks/facebook.png");
+                }
+                &.twitter {
+                    background-image: url("../images/social-networks/twitter.png");
+                }
+                &.vkontakte {
+                    background-image: url("../images/social-networks/vkontakte.png");
+                }
+                &.telegram {
+                    background-image: url("../images/social-networks/telegram.png");
+                }
+                &.instagram {
+                    background-image: url("../images/social-networks/instagam.png");
+                }
+            }
+            .amount {
+                text-align: center;
+                font-family: "Hightway-medium", arial, sans-serif;
+                font-size: 14px;
+                color: rgb(178, 178, 178);
+            }
+            .social-network-icon,
+            .amount {
+                display: block;
+            }
+            .social-network-icon {
+                margin: 0px auto 13px;
+            }
+        }
+    }
+}
+.similar-news-module {
+    padding-top: 20px;
+    article {
+        &:first-of-type {
+            padding-top: 20px;
+        }
+        &:not(:last-of-type) {
+            padding-bottom: 30px;
+        }
+        .similar-news-preview {
+            width: 25%;
+            padding-right: 10px;
+            img {
+                width: 100%;
+                max-width: 80px;
+                max-height: 70px;
+            }
+        }
+        a {
+            display: block;
+            .similar-news-description {
+                width: 75%;
+                h3 {
+                    margin-bottom: 20px;
+                    font-family: "Hightway-medium", arial, sans-serif;
+                    font-size: 14px;
+                    color: $headersColor;
+                }
+                .similar-news-footer {
+                    h4, p {
+                        font-family: "Hightway-light", arial, sans-serif;
+                        font-size: 14px;
+                        color: $articleInformationColor;
+                        &:first-child {
+                            margin-right: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.social-networks-module,
+.similar-news-module,
+nav {
+    h2 {
+        font-family: "Hightway-medium", arial, sans-serif;
+        font-size: 20px;
+        color: $headersColor;
+    }
+}
+.main-navigation {
+    h2 {
+        margin-bottom: 25px;
+    }
+    ul {
+        margin-bottom: 30px;
+        list-style-type: none;
+        li {
+            font-size: 14px;
+            font-family: "Hightway-light", arial, sans-serif;
+            a {
+                color: rgb(119, 119, 119);
+                text-decoration: none;
+                &:hover {
+                    font-family: "Hightway-medium", arial, sans-serif;
+                    color: $headersColor;
+                }
+            }
+        }
+        li:not(:last-child) {
+            padding: 10px 0px;
+        }
+        li:last-child {
+            padding-top: 10px;
+        }
+    }
+    .advertising {
+        width: 180px;
+        height: 180px;
+        background-color: rgb(235, 235, 235);
+    }
+}
+.internal-navigation {
+    border-bottom: 1px solid $borderColor;
+    padding: 38px 0px;
+    a, span {
+        font-family: "Hightway-light", arial, sans-serif;
+        font-size: 13px;
+        color: rgb(119, 119, 119);
+    }
+    span {
+        padding: 0px 7px;
+    }
+    a {
+        text-decoration: none;
+        &.active {
+            color: rgb(34, 34, 34);
+        }
+        &:first-of-type {
+            padding-left: 20px;
+            background-repeat: no-repeat;
+            background-position: 0px 50%;
+            background-image: url("../images/house.png");
+        }
+    }
+}
+.articles-list {
+    article {
+        padding: 20px;
+        border: 1px solid $borderColor;
+        background-color: rgb(255, 255, 255);
+        .article-header {
+            padding-bottom: 25px;
+            h4, p {
+                font-family: "Hightway-light", arial, sans-serif;
+                color: $articleInformationColor;
+            }
+            h4 {
+                margin-right: 20px;
+                font-size: 16px;
+            }
+            p {
+                font-size: 14px;
+            }
+            .column {
+                vertical-align: middle;
+            }
+            .article-button {
+                width: 20px;
+                height: 20px;
+                background-position: 50% 50%;
+                background-repeat: no-repeat;
+                background-image: url("../images/icons/ellipsis.png");
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        img {
+            display: block;
+            width: 100%;
+            max-width: 640px;
+            max-height: 340px;
+            margin: 0px auto 40px;
+        }
+        h3 {
+            margin-bottom: 20px;
+            font-family: "Hightway-medium", arial, sans-serif;
+            font-size: 24px;
+            color: $headersColor;
+        }
+        .description {
+            margin-bottom: 20px;
+            line-height: 150%;
+            font-family: "Hightway-medium", arial, sans-serif;
+            font-size: 18px;
+            color: rgb(70, 70, 70);
+        }
+        .tags {
+            padding-bottom: 25px;
+            border-bottom: 1px solid $borderColor;
+            a {
+                font-family: "Hightway-light", arial, sans-serif;
+                font-size: 14px;
+                color: rgb(126, 122, 149);
+                background-color: rgb(255, 255, 255);
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+            }
+        }
+        .article-footer {
+            padding-top: 20px;
+            p, a {
+                font-family: "Hightway-light", arial, sans-serif;
+                font-size: 14px;
+                text-decoration: none;
+            }
+            a {
+                color: rgb(110, 102, 117);
+            }
+            p {
+                color: rgb(183, 183, 183);
+                &.likes-amount, &.reviews-amount {
+                    padding-left: 25px;
+                    background-repeat: no-repeat;
+                    background-position: 0% 50%;
+                }
+                &.likes-amount {
+                    background-image: url("../images/icons/thumbs-up.png");
+                }
+                &.reviews-amount {
+                    background-image: url("../images/icons/eye.png");
+                }
+                &:first-child {
+                    margin-right: 38px;
+                }
+            }
+        }
+    }
+}
+.s-1 {
+    width: 8.33%;
+}
+.s-2 {
+    width: 16.66%;
+}
+.s-3 {
+    width: 25%;
+}
+.s-4 {
+    width: 33.33%;
+}
+.s-5 {
+    width: 41.66%;
+}
+.s-6 {
+    width: 50%;
+}
+.s-7 {
+    width: 58.33%
+}
+.s-8 {
+    width: 66.66%;
+}
+.s-9 {
+    width: 75%;
+}
+.s-10 {
+    width: 83.11%;
+}
+.s-11 {
+    width: 91.66%;
+}
+.s-12 {
+    width: 100%;
+}
+.to-right {
+    float: right;
+}
+.with-padding {
+    padding: 0px 20px;
+}
