@@ -20,19 +20,21 @@
   font-family: "Hightway-medium";
   src: url("/fonts/Hightway-medium.ttf");
 }
+.error-message {
+  font-family: "Hightway-light", arial, sans-serif;
+}
+
 .frame {
   width: 98%;
-  max-width: 2040px;
-  min-width: 1020px;
+  max-width: 1180px;
+  min-width: 980px;
   margin: 0px auto;
 }
 
 .internal-frame {
-  padding: 30px 0px;
   font-size: 0;
 }
 .internal-frame .column {
-  background-color: grey;
   display: inline-block;
   vertical-align: top;
 }
@@ -43,24 +45,51 @@
 }
 
 .upper-menu {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 30px 0px 15px;
   border-bottom: 1px solid #eeeeee;
+  text-align: center;
+  background-color: white;
+  z-index: 10;
 }
-.upper-menu .main-image {
-  display: block;
+.upper-menu .internal-frame {
+  max-width: 1180px;
+  min-width: 980px;
   margin: 0px auto;
 }
-.upper-menu .column {
+.upper-menu .internal-frame .column {
   vertical-align: middle;
 }
-
-.icon {
+.upper-menu .internal-frame a:not(.button) {
+  display: inline-block;
+}
+.upper-menu .internal-frame a:not(.button) .main-image:hover {
+  cursor: pointer;
+}
+.upper-menu .internal-frame .icon {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-color: #646464;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
 }
-
-.icon:not(:first-of-type) {
+.upper-menu .internal-frame .icon.menu {
+  background-image: url("../images/icons/menu.png");
+}
+.upper-menu .internal-frame .icon.loupe {
+  background-image: url("../images/icons/loupe.png");
+}
+.upper-menu .internal-frame .icon.bell {
+  background-image: url("../images/icons/bell.png");
+}
+.upper-menu .internal-frame .icon:hover {
+  cursor: pointer;
+}
+.upper-menu .internal-frame .icon:not(:first-of-type) {
   margin-left: 30px;
 }
 
@@ -79,6 +108,9 @@
   background: linear-gradient(to right, #76ead5 0%, #3dc9de 51%, #0face6 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76ead5', endColorstr='#0face6',GradientType=1 );
 }
+.button:hover {
+  cursor: pointer;
+}
 .button .additory-module {
   padding-left: 40px;
   text-align: center;
@@ -94,7 +126,11 @@
   background-color: rgba(0, 0, 0, 0.1);
   background-repeat: no-repeat;
   background-position: 0px 50%;
-  background-image: url("../images/calendar.png");
+  background-image: url("../images/icons/calendar.png");
+}
+
+.main-part {
+  padding-top: 140px;
 }
 
 .social-networks-module {
@@ -108,10 +144,15 @@
   width: 20%;
 }
 .social-networks-module .social-networks-list .column .social-network-icon {
-  width: 25px;
-  height: 20px;
+  display: block;
+  padding-top: 35px;
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 50% 0%;
+  text-align: center;
+  font-family: "Hightway-medium", arial, sans-serif;
+  font-size: 14px;
+  color: #b2b2b2;
+  text-decoration: none;
 }
 .social-networks-module .social-networks-list .column .social-network-icon.facebook {
   background-image: url("../images/social-networks/facebook.png");
@@ -128,31 +169,21 @@
 .social-networks-module .social-networks-list .column .social-network-icon.instagram {
   background-image: url("../images/social-networks/instagam.png");
 }
-.social-networks-module .social-networks-list .column .amount {
-  text-align: center;
-  font-family: "Hightway-medium", arial, sans-serif;
-  font-size: 14px;
-  color: #b2b2b2;
-}
-.social-networks-module .social-networks-list .column .social-network-icon,
-.social-networks-module .social-networks-list .column .amount {
-  display: block;
-}
-.social-networks-module .social-networks-list .column .social-network-icon {
-  margin: 0px auto 13px;
-}
 
 .similar-news-module {
   padding-top: 20px;
 }
-.similar-news-module article:first-of-type {
-  padding-top: 20px;
+.similar-news-module h2 {
+  margin-bottom: 20px;
 }
 .similar-news-module article:not(:last-of-type) {
-  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+.similar-news-module article:hover {
+  cursor: pointer;
 }
 .similar-news-module article .similar-news-preview {
-  width: 25%;
+  width: 30%;
   padding-right: 10px;
 }
 .similar-news-module article .similar-news-preview img {
@@ -164,7 +195,7 @@
   display: block;
 }
 .similar-news-module article a .similar-news-description {
-  width: 75%;
+  width: 70%;
 }
 .similar-news-module article a .similar-news-description h3 {
   margin-bottom: 20px;
@@ -183,7 +214,8 @@
 
 .social-networks-module h2,
 .similar-news-module h2,
-nav h2 {
+.sing-up-module h2,
+.main-navigation h2 {
   font-family: "Hightway-medium", arial, sans-serif;
   font-size: 20px;
   color: #222222;
@@ -203,6 +235,7 @@ nav h2 {
 .main-navigation ul li a {
   color: #777777;
   text-decoration: none;
+  transition: 0.5s color;
 }
 .main-navigation ul li a:hover {
   font-family: "Hightway-medium", arial, sans-serif;
@@ -222,7 +255,7 @@ nav h2 {
 
 .internal-navigation {
   border-bottom: 1px solid #eeeeee;
-  padding: 38px 0px;
+  padding: 5px 0px 38px;
 }
 .internal-navigation a, .internal-navigation span {
   font-family: "Hightway-light", arial, sans-serif;
@@ -242,13 +275,19 @@ nav h2 {
   padding-left: 20px;
   background-repeat: no-repeat;
   background-position: 0px 50%;
-  background-image: url("../images/house.png");
+  background-image: url("../images/icons/house.png");
+}
+.internal-navigation a:not(.active):hover {
+  text-decoration: underline;
 }
 
 .articles-list article {
   padding: 20px;
   border: 1px solid #eeeeee;
   background-color: white;
+}
+.articles-list article:not(:last-of-type) {
+  margin-bottom: 50px;
 }
 .articles-list article .article-header {
   padding-bottom: 25px;
@@ -306,9 +345,13 @@ nav h2 {
   font-size: 14px;
   color: #7e7a95;
   background-color: white;
+  text-decoration: none;
 }
 .articles-list article .tags a:not(:last-child) {
   margin-right: 10px;
+}
+.articles-list article .tags a:hover {
+  text-decoration: underline;
 }
 .articles-list article .article-footer {
   padding-top: 20px;
@@ -337,6 +380,27 @@ nav h2 {
 }
 .articles-list article .article-footer p:first-child {
   margin-right: 38px;
+}
+
+.sing-up-module form {
+  max-width: 246px;
+  padding: 25px 0px;
+}
+.sing-up-module form input[type=email] {
+  width: 100%;
+  height: 38px;
+  font-family: "Hightway-light", arial, sans-serif;
+  font-size: 14px;
+  border: 1px solid #eeeeee;
+  color: #9e9e9e;
+  text-indent: 1em;
+}
+.sing-up-module form input[type=submit] {
+  width: 100%;
+  border: none;
+}
+.sing-up-module form input:not(:last-of-type) {
+  margin-bottom: 15px;
 }
 
 .s-1 {
