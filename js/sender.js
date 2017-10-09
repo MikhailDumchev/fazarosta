@@ -2,6 +2,18 @@
  * Класс отвечает за AJAX-отправку сообщений на сервер
  */
 function Sender() {
+    var modalWindowObject = new Object();
+    this.setModalWindow = function(value) {
+        "use strict";
+        if (value) {
+            try {
+                modalWindowObject = new ModalWindow();
+                modalWindowObject.setModalWindow(value);
+            } catch (error) {
+                console.error("Необходимо добавить скрипт 'modal-window.js';");
+            }
+        }
+    };
     var requestCallerClassName = "request-caller";
     var handlerAddress = "http://fazarosta.com/add/";
     var validationObject = new Object();
@@ -70,6 +82,10 @@ function Sender() {
         var counter = 0;
         XHR.onreadystatechange = function() {
             if (XHR.readyState === 4) {
+                //Вызов модального окна;
+                if (checkObject(modalWindowObject)) {
+                    modalWindowObject.showModalWindow("Ваша заявка успешно принята!");
+                }
                 //Заполнение localStorage на основании имён и значений текстовых полей;
                 for (counter = 0; counter < this.container.elements.length; counter++) {
                     additoryObject = this.container.elements[counter];
