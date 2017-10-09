@@ -6,24 +6,27 @@ $articleInformationColor: rgb(153, 153, 153);
     padding: 0px;
     box-sizing: border-box;
 }
-@font-face {
-    font-family: "Hightway-extra-thin";
-    src: url("/fonts/Hightway-extra-thin.ttf");
+body {
+    background-color: #f5f5f5;
 }
 @font-face {
-    font-family: "Hightway-thin";
-    src: url("/fonts/Hightway-thin.ttf");
+    font-family: "Highway-light";
+    src: url("../fonts/highway-light.ttf") format('truetype');
 }
 @font-face {
-    font-family: "Hightway-light";
-    src: url("/fonts/Hightway-light.ttf");
+    font-family: "Highway-medium";
+    src: url("../fonts/highway-medium.ttf") format('truetype');
 }
 @font-face {
-    font-family: "Hightway-medium";
-    src: url("/fonts/Hightway-medium.ttf");
+    font-family: "Highway-regular";
+    src: url("../fonts/highway-regular.ttf") format('truetype');
+}
+@font-face {
+    font-family: "Highway-thin";
+    src: url("../fonts/highway-thin.ttf") format('truetype');
 }
 .error-message {
-    font-family: "Hightway-light", arial, sans-serif;
+    font-family: "Highway-light", arial, sans-serif;
 }
 .frame {
     width: 98%;
@@ -47,22 +50,25 @@ $articleInformationColor: rgb(153, 153, 153);
     top: 0px;
     left: 0px;
     width: 100%;
-    padding: 30px 0px 15px;
+    padding: 20px 0px 19px;
     border-bottom: 1px solid $borderColor;
-    text-align: center;
     background-color: rgb(255, 255, 255);
     z-index: 10;
     .internal-frame {
         max-width: 1180px;
         min-width: 980px;
         margin: 0px auto;
+        .with-padding {
+            text-align: center;
+        }
         .column {
             vertical-align: middle;
         }
         a:not(.button) {
             display: inline-block;
+            margin-left: 103px;
             .main-image {
-            &:hover {
+                &:hover {
                     cursor: pointer;
                 }
             }
@@ -73,7 +79,6 @@ $articleInformationColor: rgb(153, 153, 153);
             height: 20px;
             background-color: rgb(255, 255, 255);
             background-repeat: no-repeat;
-            background-size: 20px 20px;
             &.menu {
                background-image: url("../images/icons/menu.png"); 
             }
@@ -98,7 +103,7 @@ $articleInformationColor: rgb(153, 153, 153);
     width: 180px;
     height: 40px;
     font-size: 16px;
-    font-family: "Hightway-medium", arial, sans-serif;
+    font-family: "Highway-light", arial, sans-serif;
     color: rgb(255, 255, 255);
     text-decoration: none;
     background: #76ead5;
@@ -128,22 +133,22 @@ $articleInformationColor: rgb(153, 153, 153);
     }
 }
 .main-part {
-    padding-top: 140px;
+    padding-top: 114px;
 }
 .social-networks-module {
     border-bottom: 1px solid $borderColor;
     .social-networks-list {
         width: 100%;
-        padding: 15px 0px 20px;
+        padding: 12px 0px 17px;
         .column {
             width: 20%;
             .social-network-icon {
                 display: block;
-                padding-top: 35px;
+                padding-top: 30px;
                 background-repeat: no-repeat;
                 background-position: 50% 0%;
                 text-align: center;
-                font-family: "Hightway-medium", arial, sans-serif;
+                font-family: "Highway-thin", arial, sans-serif;
                 font-size: 14px;
                 color: rgb(178, 178, 178);
                 text-decoration: none;
@@ -167,9 +172,9 @@ $articleInformationColor: rgb(153, 153, 153);
     }
 }
 .similar-news-module {
-    padding-top: 20px;
+    padding-top: 15px;
     h2 {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
     article {
         &:not(:last-of-type) {
@@ -192,14 +197,16 @@ $articleInformationColor: rgb(153, 153, 153);
             .similar-news-description {
                 width: 70%;
                 h3 {
-                    margin-bottom: 20px;
-                    font-family: "Hightway-medium", arial, sans-serif;
+                    margin-bottom: 10px;
+                    font-family: "Highway-light", arial, sans-serif;
                     font-size: 14px;
+                    font-weight: 300;
                     color: $headersColor;
                 }
                 .similar-news-footer {
                     h4, p {
-                        font-family: "Hightway-light", arial, sans-serif;
+                        font-family: "Highway-thin", arial, sans-serif;
+                        font-weight: 300;
                         font-size: 14px;
                         color: $articleInformationColor;
                         &:first-child {
@@ -216,36 +223,42 @@ $articleInformationColor: rgb(153, 153, 153);
 .sing-up-module,
 .main-navigation {
     h2 {
-        font-family: "Hightway-medium", arial, sans-serif;
+        font-family: "Highway-light", arial, sans-serif;
         font-size: 20px;
         color: $headersColor;
     }
 }
 .main-navigation {
+    .flat-free-module {
+        position: fixed;
+    }
     h2 {
-        margin-bottom: 25px;
+        margin-bottom: 13px;
     }
     ul {
         margin-bottom: 30px;
         list-style-type: none;
         li {
             font-size: 14px;
-            font-family: "Hightway-light", arial, sans-serif;
+            font-family: "Highway-light", arial, sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.2px;
             a {
                 color: rgb(119, 119, 119);
                 text-decoration: none;
                 transition: 0.5s color;
                 &:hover {
-                    font-family: "Hightway-medium", arial, sans-serif;
+                    font-family: "Highway-light", arial, sans-serif;
+                    font-weight: 300;
                     color: $headersColor;
                 }
             }
         }
         li:not(:last-child) {
-            padding: 10px 0px;
+            padding: 6.5px 2px;
         }
         li:last-child {
-            padding-top: 10px;
+            padding: 6.5px 2px 0px;
         }
     }
     .advertising {
@@ -255,10 +268,9 @@ $articleInformationColor: rgb(153, 153, 153);
     }
 }
 .internal-navigation {
-    border-bottom: 1px solid $borderColor;
-    padding: 5px 0px 38px;
+    padding: 3px 15px 38px;
     a, span {
-        font-family: "Hightway-light", arial, sans-serif;
+        font-family: "Highway-light", arial, sans-serif;
         font-size: 13px;
         color: rgb(119, 119, 119);
     }
@@ -283,16 +295,17 @@ $articleInformationColor: rgb(153, 153, 153);
 }
 .articles-list {
     article {
-        padding: 20px;
+        padding: 21px;
         border: 1px solid $borderColor;
         background-color: rgb(255, 255, 255);
         &:not(:last-of-type) {
             margin-bottom: 50px;
         }
         .article-header {
-            padding-bottom: 25px;
+            padding-bottom: 30px;
             h4, p {
-                font-family: "Hightway-light", arial, sans-serif;
+                font-family: "Highway-thin", arial, sans-serif;
+                font-weight: 300;
                 color: $articleInformationColor;
             }
             h4 {
@@ -324,15 +337,17 @@ $articleInformationColor: rgb(153, 153, 153);
             margin: 0px auto 40px;
         }
         h3 {
-            margin-bottom: 20px;
-            font-family: "Hightway-medium", arial, sans-serif;
+            margin-bottom: 10px;
+            font-family: "Highway-light", arial, sans-serif;
+            font-weight: 300;
             font-size: 24px;
             color: $headersColor;
         }
         .description {
             margin-bottom: 20px;
-            line-height: 150%;
-            font-family: "Hightway-medium", arial, sans-serif;
+            line-height: 140%;
+            font-family: "Highway-regular", arial, sans-serif;
+            font-weight: 300;
             font-size: 18px;
             color: rgb(70, 70, 70);
         }
@@ -340,7 +355,7 @@ $articleInformationColor: rgb(153, 153, 153);
             padding-bottom: 25px;
             border-bottom: 1px solid $borderColor;
             a {
-                font-family: "Hightway-light", arial, sans-serif;
+                font-family: "Highway-light", arial, sans-serif;
                 font-size: 14px;
                 color: rgb(126, 122, 149);
                 background-color: rgb(255, 255, 255);
@@ -356,7 +371,7 @@ $articleInformationColor: rgb(153, 153, 153);
         .article-footer {
             padding-top: 20px;
             p, a {
-                font-family: "Hightway-light", arial, sans-serif;
+                font-family: "Highway-light", arial, sans-serif;
                 font-size: 14px;
                 text-decoration: none;
             }
@@ -390,7 +405,7 @@ $articleInformationColor: rgb(153, 153, 153);
         input[type=email] {
             width: 100%;
             height: 38px;
-            font-family: "Hightway-light", arial, sans-serif;
+            font-family: "Highway-light", arial, sans-serif;
             font-size: 14px;
             border: 1px solid $borderColor;
             color: rgb(158, 158, 158);
@@ -445,5 +460,48 @@ $articleInformationColor: rgb(153, 153, 153);
     float: right;
 }
 .with-padding {
-    padding: 0px 20px;
+    padding: 0px 5px;
+}
+.right-side-module {
+    position: relative;
+    padding-left: 16px;
+}
+.air-module {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    min-height: 2000px;
+}
+.internal-air-module {
+    position: sticky;
+    top: 120px;
+}
+#background {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+#background.active {
+    display: block;
+}
+.modal-window {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 480px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px 20px 25px;
+    border-radius: 10px;
+    opacity: 0;
+    z-index: 15;
+}
+.modal-window.active {
+    display: block;
 }
