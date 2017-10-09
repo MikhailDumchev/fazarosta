@@ -75,3 +75,9 @@ function calculateOffset(Element) {
     var left = Rectangle.left + scrollLeft - clientLeft;
     return { "top": Math.round(top), "left": Math.round(left) };
 }
+function checkObject(value) {
+    for (var key in value) {
+        if (value.hasOwnProperty(key)) return true;
+    }
+    return false;
+}
