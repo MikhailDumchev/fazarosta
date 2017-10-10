@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body>
+    <body class="disabled">
         <div class="frame">
             <!--ШАПКА САЙТА-->
             <div class="upper-menu">
@@ -154,48 +154,48 @@
                             <section class="similar-news-module">
                                 <h2>Читайте также</h2>
                                 <!--ТЕЛО ПОХОЖЕЙ НОВОСТИ-->
-                                <article>
+                                <article class="article-preview">
                                     <a href="#">
-                                        <div class="column similar-news-preview" data-src="images/articles/article-preview.png" data-alt="Новое изображение"></div>
-                                        <div class="column similar-news-description">
+                                        <div class="column article-preview-image" data-src="images/articles/article-preview.png" data-alt="Новое изображение"></div>
+                                        <div class="column article-preview-description">
                                             <h3>«Дорогая, я хочу, чтобы ты пошла работать!»</h3>
-                                            <div class="similar-news-footer">
+                                            <div class="article-preview-footer">
                                                 <p class="column">4 сентября</p>
                                                 <h4 class="column">Знакомства</h4>
                                             </div>
                                         </div>
                                     </a>
                                 </article>
-                                <article>
+                                <article class="article-preview">
                                     <a href="#">
-                                        <div class="column similar-news-preview" data-src="images/articles/article-preview-1.png"></div>
-                                        <div class="column similar-news-description">
+                                        <div class="column article-preview-image" data-src="images/articles/article-preview-1.png"></div>
+                                        <div class="column article-preview-description">
                                             <h3>Химия отношений: насколько вы открыты для новых связей?</h3>
-                                            <div class="similar-news-footer">
+                                            <div class="article-preview-footer">
                                                 <p class="column">28 июля</p>
                                                 <h4 class="column">Знакомства</h4>
                                             </div>
                                         </div>
                                     </a>
                                 </article>
-                                <article>
+                                <article class="article-preview">
                                     <a href="#">
-                                        <div class="column similar-news-preview"></div>
-                                        <div class="column similar-news-description">
+                                        <div class="column article-preview-image"></div>
+                                        <div class="column article-preview-description">
                                             <h3>Долго и счастливо: 5 мифов об идеальном союзе</h3>
-                                            <div class="similar-news-footer">
+                                            <div class="article-preview-footer">
                                                 <p class="column">10 июня</p>
                                                 <h4 class="column">Знакомства</h4>
                                             </div>
                                         </div>
                                     </a>
                                 </article>
-                                <article>
+                                <article class="article-preview">
                                     <a href="#">
-                                        <div class="column similar-news-preview" data-src="images/articles/article-preview.png"></div>
-                                        <div class="column similar-news-description">
+                                        <div class="column article-preview-image" data-src="images/articles/article-preview.png"></div>
+                                        <div class="column article-preview-description">
                                             <h3>9 очень простых причин, почему вас не позвали даже на первое свидание, е-е-е-е-е...</h3>
-                                            <div class="similar-news-footer">
+                                            <div class="article-preview-footer">
                                                 <p class="column">10 июня</p>
                                                 <h4 class="column">Знакомства</h4>
                                             </div>
@@ -215,10 +215,120 @@
                 </aside>
             </div>
         </div>
+        <!--КОНТЕЙНЕР ДЛЯ КОМПОНЕНТОВ МОДАЛЬНОГО ОКНА-->
         <div class="modal-window-container">
+            <div id="background"></div>
             <div class="modal-window">
                 <span class="closing-button"></span>
                 <p class="modal-window-message"></p>
+            </div>
+        </div>
+        <!--ОКНО МЕНЮ-->
+        <div class="pop-up-menu">
+            <div class="frame">
+                <div class="internal-frame categories-list">
+                    <div class="column s-4 with-two-columns">
+                        <h2>Психология отношений</h2>
+                        <ul>
+                            <li>влюбить в себя</li>
+                            <li>выйти замуж</li>
+                            <li>знакомства</li>
+                            <li>интернет знакомства</li>
+                            <li>любовь</li>
+                            <li>повысить самооценку</li>
+                            <li>психология женщины</li>
+                            <li>психология мужчины</li>
+                            <li>психология отношений</li>
+                            <li>психология семьи</li>
+                        </ul>
+                    </div>
+                    <div class="column s-4 with-one-column">
+                        <h2>Развитие и деньги</h2>
+                        <ul>
+                            <li>счастье</li>
+                            <li>тренинги роста</li>
+                            <li>финансовая грамотность</li>
+                            <li>цели</li>
+                            <li>психология денег</li>
+                        </ul>
+                    </div>
+                    <div class="column s-4 with-two-columns">
+                        <h2>Дети и родители</h2>
+                        <ul>
+                            <li>воспитание детей</li>
+                            <li>развитие ребёнка</li>
+                            <li>роды</li>
+                            <li>детский сад</li>
+                            <li>школа</li>
+                            <li>подросток</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="internal-frame">
+                    <div class="column s-12 search-form">
+                        <form action="" method="POST" onsubmit="return false;">
+                            <div>
+                                <input type="text" name="search" placeholder="Поиск по сайту">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="internal-frame">
+                    <section class="column s-4 popular-news">
+                        <h2>Популярное за сегодня</h2>
+                        <article class="article-preview">
+                            <a href="#">
+                                <div class="column article-preview-image" data-src="images/articles/article-preview.png" data-alt="Новое изображение"></div>
+                                <div class="column article-preview-description">
+                                    <h3>«Дорогая, я хочу, чтобы ты пошла работать!»</h3>
+                                    <div class="article-preview-footer">
+                                        <p class="column">4 сентября</p>
+                                        <h4 class="column">Знакомства</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="article-preview">
+                            <a href="#">
+                                <div class="column article-preview-image" data-src="images/articles/article-preview.png" data-alt="Новое изображение"></div>
+                                <div class="column article-preview-description">
+                                    <h3>«Дорогая, я хочу, чтобы ты пошла работать!»</h3>
+                                    <div class="article-preview-footer">
+                                        <p class="column">4 сентября</p>
+                                        <h4 class="column">Знакомства</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="article-preview">
+                            <a href="#">
+                                <div class="column article-preview-image" data-src="images/articles/article-preview.png" data-alt="Новое изображение"></div>
+                                <div class="column article-preview-description">
+                                    <h3>«Дорогая, я хочу, чтобы ты пошла работать!»</h3>
+                                    <div class="article-preview-footer">
+                                        <p class="column">4 сентября</p>
+                                        <h4 class="column">Знакомства</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="article-preview">
+                            <a href="#">
+                                <div class="column article-preview-image" data-src="images/articles/article-preview.png" data-alt="Новое изображение"></div>
+                                <div class="column article-preview-description">
+                                    <h3>«Дорогая, я хочу, чтобы ты пошла работать!»</h3>
+                                    <div class="article-preview-footer">
+                                        <p class="column">4 сентября</p>
+                                        <h4 class="column">Знакомства</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </section>
+                    <section class="column s-8 upcoming-events">
+                        <h2>Ближайшие мероприятия и события</h2>
+                    </section>
+                </div>
             </div>
         </div>
         <link property="stylesheet" rel="stylesheet" href="css/validation.css">
@@ -235,6 +345,7 @@
                 "use strict";
                 var loader = new lazyLoader();
                 loader.execute(document.getElementsByClassName("similar-news-module")[0]);
+                loader.execute(document.getElementsByClassName("popular-news")[0]);
                 var senderObject = new Sender();
                 senderObject.appendHandler(document.getElementsByClassName("request-caller")[0]);
                 senderObject.setModalWindow(document.getElementsByClassName("modal-window")[0]);
