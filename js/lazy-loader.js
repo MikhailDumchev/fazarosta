@@ -15,9 +15,7 @@ function lazyLoader() {
     var targetsArray = new Array();
     /**
      * Метод используется для добавления IMG к допустимому целевому HTML-элементу;
-     * 
      * @param {Number} counter Номер целевого HTML-элемента в созданном ранее массиве
-     * 
      * @author Mikhail Dumchev (mikhail_dumchev@ukr.net);
      * */
     var addImage = function(counter) {
@@ -37,9 +35,7 @@ function lazyLoader() {
     };
     /**
      * Инициализирующий метод;
-     * 
      * @param {HTMLElement} value Ссылка на HTML-элемент, в котором содержатся изображения с отложенной загрузкой;
-     * 
      * @author Mikhail Dumchev (mikhail_dumchev@ukr.net);
      * */
     this.execute = function(value) {

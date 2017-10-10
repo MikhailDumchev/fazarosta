@@ -1,12 +1,18 @@
 /**
- * Класс отвечает за AJAX-отправку сообщений на сервер
+ * Класс отвечает за AJAX-отправку сообщений на сервер с возможностью последующего отображения модального окна;
  */
 function Sender() {
+    //В переменной содержится ссылка на объект класса "ModalWindow";
     var modalWindowObject = new Object();
+    /*
+     * Метод используется для задания HTML-элемента в качестве модального окна;
+     * @param {HTMLElement} value Ссылка на DOM-элемент;
+     */
     this.setModalWindow = function(value) {
         "use strict";
         if (value) {
             try {
+                //Инициализация модального окна;
                 modalWindowObject = new ModalWindow();
                 modalWindowObject.setModalWindow(value);
             } catch (error) {
@@ -14,9 +20,13 @@ function Sender() {
             }
         }
     };
+    //Класс DOM-элементов, для которых добавляются обработчики события;
     var requestCallerClassName = "request-caller";
-    var handlerAddress = "http://fazarosta.com/add/";
+    //Адрес обработчика (полный путь для совместимости с "AdBlock");
+    var handlerAddress = "http://fazarosta.com/add/index.php";
+    //В переменной содержится ссылка на объект класса "Validation";
     var validationObject = new Object();
+    //Ссылка на DOM-элемент, при нажатии на который вызывается модальное окно;
     this.button = new Object();
     //Название индикатора-заглушки, который препятствует отправке формы;
     var indicator = "data-indicator";
@@ -26,7 +36,8 @@ function Sender() {
     this.setIndicator = function(value) {
         indicator = value;
     };
-    this.clearTextFields = function() {
+    //Метод используется для очистки значений во всех текстовых полях формы;
+    var clearTextFields = function() {
         "use strict";
         var counter = 0;
         var additoryObject = new Object();
@@ -44,7 +55,10 @@ function Sender() {
             }
         }
     }.bind(this);
-    //Метод инициализирует возможность AJAX-отправки данных;
+    /*
+     * Метод инициализирует возможность AJAX-отправки данных (инициализация переменных и добавление слушателей событий);
+     * @param {HTMLElement} value Ссылка на DOM-элемент
+     * */
     this.appendHandler = function(element) {
         "use strict";
         var additoryObject = new Object();
@@ -82,32 +96,41 @@ function Sender() {
         var counter = 0;
         XHR.onreadystatechange = function() {
             if (XHR.readyState === 4) {
-                //Вызов модального окна;
-                if (checkObject(modalWindowObject)) {
-                    modalWindowObject.showModalWindow("Ваша заявка успешно принята!");
-                }
-                //Заполнение localStorage на основании имён и значений текстовых полей;
-                for (counter = 0; counter < this.container.elements.length; counter++) {
-                    additoryObject = this.container.elements[counter];
-                    if (additoryObject.type !== "submit") {
-                        switch (additoryObject.type) {
-                            case "text":
-                            case "email":
-                            case "tel":
-                                localStorageObject[additoryObject.name] = additoryObject.value;
-                                break;
-                            case "radio":
-                                if (additoryObject.checked) {
+                if (XHR.status === 200) {
+                    //Вызов модального окна;
+                    if (checkObject(modalWindowObject)) {
+                        modalWindowObject.showModalWindow("Ваша заявка успешно принята!");
+                    }
+                    //Заполнение localStorage на основании имён и значений текстовых полей;
+                    for (counter = 0; counter < this.container.elements.length; counter++) {
+                        additoryObject = this.container.elements[counter];
+                        if (additoryObject.type !== "submit") {
+                            switch (additoryObject.type) {
+                                case "text":
+                                case "email":
+                                case "tel":
                                     localStorageObject[additoryObject.name] = additoryObject.value;
-                                }
-                                break;
-                            default: break;
-                        }
-                        if (additoryObject.nodeName === "TEXTAREA") {
-                            localStorageObject[additoryObject.name] = additoryObject.value;
+                                    break;
+                                case "radio":
+                                    if (additoryObject.checked) {
+                                        localStorageObject[additoryObject.name] = additoryObject.value;
+                                    }
+                                    break;
+                                default: break;
+                            }
+                            if (additoryObject.nodeName === "TEXTAREA") {
+                                localStorageObject[additoryObject.name] = additoryObject.value;
+                            }
                         }
                     }
+                } else {
+                    //Вызов модального окна;
+                    if (checkObject(modalWindowObject)) {
+                        modalWindowObject.showModalWindow("При отправке Ваших данных возникла ошибка;");
+                    }
                 }
+                //Очистка введённых пользователем данных;
+                clearTextFields();
                 //Удаление индикатора-заглушки;
                 document.body.removeAttribute(indicator);
             }
