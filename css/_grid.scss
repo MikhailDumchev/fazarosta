@@ -1,0 +1,63 @@
+/* 
+    Created on : 10.10.2017, 17:57:21
+    Author     : Mikhail Dumchev
+*/
+.frame {
+    width: 98%;
+    max-width: 1180px;
+    min-width: 980px;
+    margin: 0px auto;
+}
+.internal-frame {
+    font-size: 0;
+    .column {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+.additory-module {
+    display: table-cell;
+    vertical-align: middle;
+}
+.s-1 {
+    width: 8.33%;
+}
+.s-2 {
+    width: 16.66%;
+}
+.s-3 {
+    width: 25%;
+}
+.s-4 {
+    width: 33.33%;
+}
+.s-5 {
+    width: 41.66%;
+}
+.s-6 {
+    width: 50%;
+}
+.s-7 {
+    width: 58.33%
+}
+.s-8 {
+    width: 66.66%;
+}
+.s-9 {
+    width: 75%;
+}
+.s-10 {
+    width: 83.11%;
+}
+.s-11 {
+    width: 91.66%;
+}
+.s-12 {
+    width: 100%;
+}
+.to-right {
+    float: right;
+}
+.with-padding {
+    padding: 0px 5px;
+}

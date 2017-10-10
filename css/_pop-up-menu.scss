@@ -1,0 +1,121 @@
+/* 
+    Created on : 10.10.2017, 14:12:32
+    Author     : Mikhail Dumchev
+*/
+$itemsAmount: 5;
+.disabled {
+    overflow: hidden;
+}
+.pop-up-menu {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow-y: scroll;
+    z-index: 20;
+}
+.search-form {
+    div {
+        position: relative;
+        margin: 95px 0px;
+        &:after {
+            display: block;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            content: "";
+            width: 62px;
+            height: 62px;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-image: url("../images/icons/loupe-gray.png");
+        }
+        input {
+            padding: 0px 17px;
+            width: 100%;
+            height: 62px;
+            border: 1px solid rgb(51, 51, 51);
+            background-color: inherit;
+            font-family: "Highway-medium", arial, sans-serif;
+            font-size: 36px;
+            font-weight: 300;
+            color: rgb(172, 172, 172); 
+        }
+    }
+}
+.categories-list {
+    .with-two-columns {
+        ul {
+            overflow: hidden;
+            li {
+                width: 50%;
+                &:nth-child(-n + #{$itemsAmount}) {
+                    float: left;
+                    clear: both;
+                }
+                &:nth-child(n + #{$itemsAmount}) {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    .with-one-column {
+        text-align: center;
+        ul {
+            display: inline-block;
+            li {
+                text-align: left;
+            }
+        }
+    }
+    h2 {
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgb(51, 51, 51);
+        font-size: 20px;
+        font-weight: 300;
+        font-family: "Highway-medium", arial, sans-serif;
+        color: rgb(255, 255, 255);
+    }
+    ul {
+        padding: 10px 0px 0px;
+        list-style-type: none;
+        li {
+            font-size: 16px;
+            font-family: "Highway-light", arial, sans-serif;
+            font-weight: 300;
+            color: rgb(193, 193, 193);
+        }
+    }
+}
+.popular-news {
+    h2 {
+        margin-bottom: 15px;
+        font-family: $mediumFont;
+        font-size: 20px;
+        font-weight: 300;
+        color: rgb(255, 255, 255);
+    }
+}
+.popular-news {
+    .article-preview {
+        &:not(:last-of-type) {
+            margin-bottom: 20px;
+        }
+        padding: 8px;
+        background-color: rgb(31, 31, 31);
+        a {
+            .article-preview-description {
+                h3 {
+                   color: rgb(255, 255, 255); 
+                }
+                .article-preview-footer {
+                    h4, p {
+                        color: $articleInformationColor;
+                    }
+                }
+            }
+        }
+    }
+}
