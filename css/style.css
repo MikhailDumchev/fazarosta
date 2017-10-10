@@ -489,6 +489,10 @@ body {
 
 .internal-air-module {
   position: sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: -webkit-sticky;
   top: 120px;
 }
 
