@@ -10,7 +10,7 @@ function lazyLoader() {
     //Ссылка на контейнер;
     var container = new Object();
     //Класс целевого HTML-элемента;
-    var targetClassName = "similar-news-preview";
+    var targetClassName = "article-preview-image";
     //Массив ссылок на целевые HTML-элементы (контейнеры для img);
     var targetsArray = new Array();
     /**
@@ -53,7 +53,9 @@ function lazyLoader() {
             }
             if (targetsArray.length) {
                 //Динамическое добавление HTML-элементов;
-               for (counter = 0; counter < targetsArray.length; counter++) addImage(counter); 
+               for (counter = 0; counter < targetsArray.length; counter++) addImage(counter);
+               //Очистка массива;
+               targetsArray = new Array();
             } else console.error("Не было найдено ни одного целевого HTML-элемента, который удовлетворяет необходимые условия;");
         } else console.error("Необходимо указать ссылку на HTML-элемент;");
     };
