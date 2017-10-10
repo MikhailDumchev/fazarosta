@@ -1,10 +1,21 @@
 function ModalWindow() {
     var callerClassName = "modal-window-caller";
+    var containerClassName = "modal-window-container";
     var modalWindowClassName = "modal-window";
     var closingButtonClassName = "closing-button";
     var messageBoxClassName = "modal-window-message";
+    var backgrondElementId = "background";
     //Длительность анимации;
     var duration = 500;
+    var createBackground = function() {
+        "use strict";
+        background = document.createElement("div");
+        background.id = backgrondElementId;
+        var result = searchContainer(modalWindow, "class", containerClassName);
+        if (result.status) {
+            result.element.appendChild(background);
+        }
+    };
     function searchContainer(element, attributeTitle, attributeValue) {
         "use strict";
         var indicator = false;
@@ -32,7 +43,7 @@ function ModalWindow() {
         } else console.error("Необходимо передать ссылку на HTML-элемент;");
     };
     //В переменной содержится ссылка на DOM-элемент, который выполняет роль заднего фона;
-    var background = document.getElementById("background");
+    var background = document.getElementById(backgrondElementId);
     this.initializeModalWindow = function() {
         "use strict";
         var counter = 0;
@@ -48,6 +59,8 @@ function ModalWindow() {
             //Добавление класса "active-modal-window" к DOM-элементу, который выполняет роль модального окна. Этот класс
             //необходим для определения текущего активного модального окна;
             addClassName(modalWindow, "active");
+            //Если не был найден элемент с id "background", он создаётся;
+            if (!background) createBackground();
             addClassName(background, "active");
             //Если указан текст, который должен быть выведен в модальном окне;
             if (message) {
