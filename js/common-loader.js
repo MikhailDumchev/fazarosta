@@ -1,5 +1,5 @@
 function CommonLoader() {
-    var handlerAddress = "http://fazarosta.com/add/";
+    var handlerAddress = "http://fazarosta.com/add/index.php";
     this.makeRequest = function(incomingObject) {
         "use strict";
         var XHR = new XMLHttpRequest();
