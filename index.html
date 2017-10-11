@@ -12,7 +12,7 @@
             <div class="upper-menu">
                 <div class="internal-frame">
                     <div class="column s-2">
-                        <span class="icon menu"></span>
+                        <span class="icon menu" id="menu-caller"></span>    
                         <span class="icon loupe"></span>
                         <span class="icon bell"></span>
                     </div>
@@ -60,7 +60,7 @@
                     <div class="articles-list">
                         <!--ПРЕВЬЮ СТАТЬИ-->
                         <article>
-                            <div class="article-header">
+                            <div class="internal-frame article-header">
                                 <h4 class="column">Отношения</h4>
                                 <p class="column">2 часа назад</p>
                                 <span class="column to-right article-button"></span>
@@ -83,7 +83,7 @@
                                 <a href="#">#психология</a>
                                 <a href="#">#курсы</a>
                             </div>
-                            <div class="article-footer">
+                            <div class="internal-frame article-footer">
                                 <p class="column likes-amount">2458</p>
                                 <p class="column reviews-amount">3495</p>
                                 <p class="column to-right">
@@ -92,7 +92,7 @@
                             </div>
                         </article>
                         <article>
-                            <div class="article-header">
+                            <div class="internal-frame article-header">
                                 <h4 class="column">Отношения</h4>
                                 <p class="column">2 часа назад</p>
                                 <span class="column to-right article-button"></span>
@@ -115,7 +115,7 @@
                                 <a href="#">#психология</a>
                                 <a href="#">#курсы</a>
                             </div>
-                            <div class="article-footer">
+                            <div class="internal-frame article-footer">
                                 <p class="column likes-amount">2458</p>
                                 <p class="column reviews-amount">3495</p>
                                 <p class="column to-right">
@@ -132,7 +132,7 @@
                             <!--БЛОК С ССЫЛКАМИ НА СОЦИАЛЬНЫЕ СЕТИ-->
                             <section class="social-networks-module">
                                 <h2>Мы в соц.сетях</h2>
-                                <div class="social-networks-list">
+                                <div class="internal-frame social-networks-list">
                                     <div class="column">
                                         <a href="#" title="Нажмите, чтобы перейти по ссылке;" class="social-network-icon facebook">22.4 k</a>
                                     </div>
@@ -155,11 +155,11 @@
                                 <h2>Читайте также</h2>
                                 <!--ТЕЛО ПОХОЖЕЙ НОВОСТИ-->
                                 <article class="article-preview">
-                                    <a href="#">
+                                    <a href="#" class="internal-frame">
                                         <div class="column article-preview-image" data-src="images/articles/article-preview.png" data-alt="Новое изображение"></div>
                                         <div class="column article-preview-description">
                                             <h3>«Дорогая, я хочу, чтобы ты пошла работать!»</h3>
-                                            <div class="article-preview-footer">
+                                            <div class="internal-frame article-preview-footer">
                                                 <p class="column">4 сентября</p>
                                                 <h4 class="column">Знакомства</h4>
                                             </div>
@@ -167,11 +167,11 @@
                                     </a>
                                 </article>
                                 <article class="article-preview">
-                                    <a href="#">
+                                    <a href="#" class="internal-frame">
                                         <div class="column article-preview-image" data-src="images/articles/article-preview-1.png"></div>
                                         <div class="column article-preview-description">
                                             <h3>Химия отношений: насколько вы открыты для новых связей?</h3>
-                                            <div class="article-preview-footer">
+                                            <div class="internal-frame article-preview-footer">
                                                 <p class="column">28 июля</p>
                                                 <h4 class="column">Знакомства</h4>
                                             </div>
@@ -179,11 +179,11 @@
                                     </a>
                                 </article>
                                 <article class="article-preview">
-                                    <a href="#">
+                                    <a href="#" class="internal-frame">
                                         <div class="column article-preview-image"></div>
                                         <div class="column article-preview-description">
                                             <h3>Долго и счастливо: 5 мифов об идеальном союзе</h3>
-                                            <div class="article-preview-footer">
+                                            <div class="internal-frame article-preview-footer">
                                                 <p class="column">10 июня</p>
                                                 <h4 class="column">Знакомства</h4>
                                             </div>
@@ -191,11 +191,11 @@
                                     </a>
                                 </article>
                                 <article class="article-preview">
-                                    <a href="#">
+                                    <a href="#" class="internal-frame">
                                         <div class="column article-preview-image" data-src="images/articles/article-preview.png"></div>
                                         <div class="column article-preview-description">
                                             <h3>9 очень простых причин, почему вас не позвали даже на первое свидание, е-е-е-е-е...</h3>
-                                            <div class="article-preview-footer">
+                                            <div class="internal-frame article-preview-footer">
                                                 <p class="column">10 июня</p>
                                                 <h4 class="column">Знакомства</h4>
                                             </div>
@@ -224,10 +224,10 @@
             </div>
         </div>
         <!--ОКНО МЕНЮ-->
-        <div class="pop-up-menu">
+        <div id="pop-up-menu">
             <div class="frame">
                 <div class="internal-frame categories-list">
-                    <div class="column s-4 with-two-columns">
+                    <div class="column s-4 with-two-columns with-right-padding active">
                         <h2>Психология отношений</h2>
                         <ul>
                             <li>влюбить в себя</li>
@@ -242,7 +242,7 @@
                             <li>психология семьи</li>
                         </ul>
                     </div>
-                    <div class="column s-4 with-one-column">
+                    <div class="column s-4 with-one-column with-padding">
                         <h2>Развитие и деньги</h2>
                         <ul>
                             <li>счастье</li>
@@ -252,7 +252,7 @@
                             <li>психология денег</li>
                         </ul>
                     </div>
-                    <div class="column s-4 with-two-columns">
+                    <div class="column s-4 with-two-columns with-left-padding">
                         <h2>Дети и родители</h2>
                         <ul>
                             <li>воспитание детей</li>
@@ -266,68 +266,159 @@
                 </div>
                 <div class="internal-frame">
                     <div class="column s-12 search-form">
-                        <form action="" method="POST" onsubmit="return false;">
+                        <form action="" method="POST" onsubmit="return false;" name="search-form">
                             <div>
                                 <input type="text" name="search" placeholder="Поиск по сайту">
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="internal-frame">
-                    <section class="column s-4 popular-news">
-                        <h2>Популярное за сегодня</h2>
-                        <article class="article-preview">
-                            <a href="#">
-                                <div class="column article-preview-image" data-src="images/articles/article-preview.png" data-alt="Новое изображение"></div>
-                                <div class="column article-preview-description">
-                                    <h3>«Дорогая, я хочу, чтобы ты пошла работать!»</h3>
-                                    <div class="article-preview-footer">
-                                        <p class="column">4 сентября</p>
-                                        <h4 class="column">Знакомства</h4>
+                <div class="base-module">
+                    <div class="internal-frame initial-content">
+                        <section class="column s-4 popular-news">
+                            <div class="internal-frame">
+                                <div class="column-table">
+                                    <div class="additory-module">
+                                        <h2>Популярное за сегодня</h2>
+                                    </div>
+                                    <div class="additory-module">
+                                        <a class="to-right" href="#">Смотреть всё</a>
                                     </div>
                                 </div>
-                            </a>
-                        </article>
-                        <article class="article-preview">
-                            <a href="#">
-                                <div class="column article-preview-image" data-src="images/articles/article-preview.png" data-alt="Новое изображение"></div>
-                                <div class="column article-preview-description">
-                                    <h3>«Дорогая, я хочу, чтобы ты пошла работать!»</h3>
-                                    <div class="article-preview-footer">
-                                        <p class="column">4 сентября</p>
-                                        <h4 class="column">Знакомства</h4>
+                            </div>
+                            <article class="internal-frame article-preview">
+                                <a href="#">
+                                    <div class="column-table article-preview-image">
+                                        <div class="additory-module" data-src="images/articles/article-preview.png" data-alt="Новое изображение"></div>
+                                    </div>
+                                    <div class="column article-preview-description">
+                                        <h3>«Дорогая, я хочу, чтобы ты пошла работать!»</h3>
+                                        <div class="article-preview-footer">
+                                            <p class="column">4 сентября</p>
+                                            <h4 class="column">Знакомства</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                            <article class="internal-frame article-preview">
+                                <a href="#">
+                                    <div class="column-table article-preview-image">
+                                        <div class="additory-module" data-src="images/articles/article-preview-1.png" data-alt="Новое изображение"></div>
+                                    </div>
+                                    <div class="column article-preview-description">
+                                        <h3>«Дорогая, я хочу, чтобы ты пошла работать!»</h3>
+                                        <div class="article-preview-footer">
+                                            <p class="column">4 сентября</p>
+                                            <h4 class="column">Знакомства</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                            <article class="internal-frame article-preview">
+                                <a href="#">
+                                    <div class="column-table article-preview-image">
+                                        <div class="additory-module" data-src="images/articles/article-preview.png" data-alt="Новое изображение"></div>
+                                    </div>
+                                    <div class="column article-preview-description">
+                                        <h3>«Дорогая, я хочу, чтобы ты пошла работать!»</h3>
+                                        <div class="article-preview-footer">
+                                            <p class="column">4 сентября</p>
+                                            <h4 class="column">Знакомства</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                            <article class="internal-frame article-preview">
+                                <a href="#">
+                                    <div class="column-table article-preview-image">
+                                        <div class="additory-module" data-src="images/articles/article-preview.png" data-alt="Новое изображение"></div>
+                                    </div>
+                                    <div class="column article-preview-description">
+                                        <h3>«Дорогая, я хочу, чтобы ты пошла работать!»</h3>
+                                        <div class="article-preview-footer">
+                                            <p class="column">4 сентября</p>
+                                            <h4 class="column">Знакомства</h4>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                        </section>
+                        <section class="column s-8 upcoming-events to-right">
+                            <div class="internal-frame">
+                                <div class="column-table">
+                                    <div class="additory-module">
+                                        <h2>Ближайшие мероприятия и события</h2>
+                                    </div>
+                                    <div class="additory-module">
+                                        <a class="to-right" href="#">Смотреть всё</a>
                                     </div>
                                 </div>
-                            </a>
-                        </article>
-                        <article class="article-preview">
-                            <a href="#">
-                                <div class="column article-preview-image" data-src="images/articles/article-preview.png" data-alt="Новое изображение"></div>
-                                <div class="column article-preview-description">
-                                    <h3>«Дорогая, я хочу, чтобы ты пошла работать!»</h3>
-                                    <div class="article-preview-footer">
-                                        <p class="column">4 сентября</p>
-                                        <h4 class="column">Знакомства</h4>
-                                    </div>
+                            </div>
+                            <div class="internal-frame">
+                                <div class="column s-6">
+                                    <article class="event">
+                                        <div class="event-image">
+                                            <div class="additory-module">
+                                                <h3>Путь Женщины 19</h3>
+                                                <p>30-дневная закрытая онлайн-программа...</p>
+                                            </div>
+                                        </div>
+                                        <div class="event-footer">
+                                            <p class="column">15 декабря</p>
+                                            <a class="to-right column" href="#" title="Нажмите, чтобы перейти по ссылке;">Подробнее</a>
+                                        </div>
+                                    </article>
                                 </div>
-                            </a>
-                        </article>
-                        <article class="article-preview">
-                            <a href="#">
-                                <div class="column article-preview-image" data-src="images/articles/article-preview.png" data-alt="Новое изображение"></div>
-                                <div class="column article-preview-description">
-                                    <h3>«Дорогая, я хочу, чтобы ты пошла работать!»</h3>
-                                    <div class="article-preview-footer">
-                                        <p class="column">4 сентября</p>
-                                        <h4 class="column">Знакомства</h4>
-                                    </div>
+                                <div class="column s-6">
+                                    <article class="event">
+                                        <div class="event-image">
+                                            <div class="additory-module">
+                                                <h3>Путь Женщины 19</h3>
+                                                <p>30-дневная закрытая онлайн-программа...</p>
+                                            </div>
+                                        </div>
+                                        <div class="event-footer">
+                                            <p class="column">15 декабря</p>
+                                            <a class="to-right column" href="#" title="Нажмите, чтобы перейти по ссылке;">Подробнее</a>
+                                        </div>
+                                    </article>
                                 </div>
-                            </a>
-                        </article>
-                    </section>
-                    <section class="column s-8 upcoming-events">
-                        <h2>Ближайшие мероприятия и события</h2>
-                    </section>
+                                <div class="column s-6">
+                                    <article class="event">
+                                        <div class="event-image">
+                                            <div class="additory-module">
+                                                <h3>Путь Женщины 19</h3>
+                                                <p>30-дневная закрытая онлайн-программа...</p>
+                                            </div>
+                                        </div>
+                                        <div class="event-footer">
+                                            <p class="column">15 декабря</p>
+                                            <a class="to-right column" href="#" title="Нажмите, чтобы перейти по ссылке;">Подробнее</a>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="column s-6">
+                                    <article class="event">
+                                        <div class="event-image">
+                                            <div class="additory-module">
+                                                <h3>Путь Женщины 19</h3>
+                                                <p>30-дневная закрытая онлайн-программа...</p>
+                                            </div>
+                                        </div>
+                                        <div class="event-footer">
+                                            <p class="column">15 декабря</p>
+                                            <a class="to-right column" href="#" title="Нажмите, чтобы перейти по ссылке;">Подробнее</a>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="internal-frame search-content">
+                        <div class="column s-4"></div>
+                        <div class="column s-4"></div>
+                        <div class="column s-4"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -340,6 +431,9 @@
         <script src="js/offset-detector.js"></script>
         <script src="js/common-loader.js"></script>
         <script src="js/modal-window.js"></script>
+        <script src="js/pop-up-menu.js"></script>
+        <script src="js/live-search.js"></script>
+        <script src="js/vertical-sliding-animation.js"></script>
         <script>
             window.onload = function() {
                 "use strict";
@@ -352,6 +446,8 @@
                 var offsetDetectorObject = new OffsetDetector();
                 offsetDetectorObject.setMainContainer(document.getElementsByClassName("articles-list")[0]);
                 //offsetDetectorObject.setAdditoryContainer(document.getElementsByClassName("right-side-module")[0]);
+                var liveSearchObject = new LiveSearch();
+                liveSearchObject.appendHandler(document.forms["search-form"]["search"]);
             };
         </script>
     </body>

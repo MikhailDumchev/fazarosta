@@ -14,6 +14,9 @@
         display: inline-block;
         vertical-align: top;
     }
+    .column-table {
+        display: inline-table;
+    }
 }
 .additory-module {
     display: table-cell;
@@ -58,6 +61,15 @@
 .to-right {
     float: right;
 }
-.with-padding {
+.with-small-padding {
     padding: 0px 5px;
+}
+.with-padding {
+    padding: 0px 10px;
+}
+.with-left-padding {
+    padding-left: 10px;
+}
+.with-right-padding {
+    padding-right: 10px;
 }

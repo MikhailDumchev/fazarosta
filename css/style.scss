@@ -176,18 +176,13 @@ body {
         cursor: pointer;
     }
     .article-preview-image {
-        width: 30%;
-        padding-right: 10px;
         img {
             width: 100%;
-            max-width: 80px;
-            max-height: 70px;
         }
     }
     a {
         display: block;
         .article-preview-description {
-            width: 70%;
             h3 {
                 margin-bottom: 10px;
                 font-family: $lightFont;

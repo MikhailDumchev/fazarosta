@@ -42,6 +42,9 @@ body {
   display: inline-block;
   vertical-align: top;
 }
+.internal-frame .column-table {
+  display: inline-table;
+}
 
 .additory-module {
   display: table-cell;
@@ -100,8 +103,20 @@ body {
   float: right;
 }
 
-.with-padding {
+.with-small-padding {
   padding: 0px 5px;
+}
+
+.with-padding {
+  padding: 0px 10px;
+}
+
+.with-left-padding {
+  padding-left: 10px;
+}
+
+.with-right-padding {
+  padding-right: 10px;
 }
 
 .error-message {
@@ -255,20 +270,11 @@ body {
 .article-preview:hover {
   cursor: pointer;
 }
-.article-preview .article-preview-image {
-  width: 30%;
-  padding-right: 10px;
-}
 .article-preview .article-preview-image img {
   width: 100%;
-  max-width: 80px;
-  max-height: 70px;
 }
 .article-preview a {
   display: block;
-}
-.article-preview a .article-preview-description {
-  width: 70%;
 }
 .article-preview a .article-preview-description h3 {
   margin-bottom: 10px;
@@ -550,15 +556,32 @@ body {
   overflow: hidden;
 }
 
-.pop-up-menu {
+#pop-up-menu {
   position: fixed;
   top: 0px;
   left: 0px;
-  height: 100%;
   width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   overflow-y: scroll;
   z-index: 20;
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transition-property: height, width, top, right;
+  transition-property: height, width, top, right;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+#pop-up-menu.active {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+#pop-up-menu .frame {
+  padding: 114px 0px 60px;
 }
 
 .search-form div {
@@ -589,67 +612,175 @@ body {
   color: #acacac;
 }
 
-.categories-list .with-two-columns ul {
+.categories-list .column:not(.active) h2, .categories-list .column:not(.active) li {
+  color: #acacac;
+}
+.categories-list .column:not(.active) h2 {
+  border-bottom: 1px solid #333333;
+}
+.categories-list .column.active h2 {
+  color: white;
+  border-bottom: 1px solid #999999;
+}
+.categories-list .column.active li {
+  color: #dddddd;
+}
+.categories-list .column.with-two-columns ul {
   overflow: hidden;
 }
-.categories-list .with-two-columns ul li {
+.categories-list .column.with-two-columns ul li {
   width: 50%;
 }
-.categories-list .with-two-columns ul li:nth-child(-n + 5) {
+.categories-list .column.with-two-columns ul li:nth-child(-n + 5) {
   float: left;
   clear: both;
 }
-.categories-list .with-two-columns ul li:nth-child(n + 5) {
+.categories-list .column.with-two-columns ul li:nth-child(n + 5) {
   display: inline-block;
 }
-.categories-list .with-one-column {
+.categories-list .column.with-one-column {
   text-align: center;
 }
-.categories-list .with-one-column ul {
+.categories-list .column.with-one-column ul {
   display: inline-block;
 }
-.categories-list .with-one-column ul li {
+.categories-list .column.with-one-column ul li {
   text-align: left;
 }
-.categories-list h2 {
+.categories-list .column h2 {
   padding-bottom: 10px;
-  border-bottom: 1px solid #333333;
   font-size: 20px;
   font-weight: 300;
   font-family: "Highway-medium", arial, sans-serif;
-  color: white;
 }
-.categories-list ul {
+.categories-list .column ul {
   padding: 10px 0px 0px;
   list-style-type: none;
 }
-.categories-list ul li {
+.categories-list .column ul li {
+  margin-bottom: 10px;
   font-size: 16px;
   font-family: "Highway-light", arial, sans-serif;
   font-weight: 300;
-  color: #c1c1c1;
 }
 
-.popular-news h2 {
+.popular-news .internal-frame,
+.upcoming-events .internal-frame {
   margin-bottom: 15px;
+}
+.popular-news .internal-frame .column-table,
+.upcoming-events .internal-frame .column-table {
+  width: 100%;
+}
+.popular-news .internal-frame .column-table h2,
+.upcoming-events .internal-frame .column-table h2 {
   font-family: "Highway-medium", arial, sans-serif;
   font-size: 20px;
   font-weight: 300;
   color: white;
 }
+.popular-news .internal-frame .column-table a,
+.upcoming-events .internal-frame .column-table a {
+  font-family: "Highway-light", arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  text-decoration: none;
+  color: #007aff;
+}
 
+.popular-news {
+  max-width: 380px;
+  padding-right: 20px;
+}
 .popular-news .article-preview {
-  padding: 8px;
   background-color: #1f1f1f;
 }
 .popular-news .article-preview:not(:last-of-type) {
-  margin-bottom: 20px;
+  margin-bottom: 21px;
+}
+.popular-news .article-preview:hover a .article-preview-description h3 {
+  color: white;
+}
+.popular-news .article-preview .article-preview-image {
+  width: 64px;
+  height: 64px;
+  margin-right: 15px;
+}
+.popular-news .article-preview a {
+  padding: 8px;
+}
+.popular-news .article-preview a .article-preview-description {
+  width: 250px;
 }
 .popular-news .article-preview a .article-preview-description h3 {
-  color: white;
+  transition: 0.5s color;
+  color: #cccccc;
 }
 .popular-news .article-preview a .article-preview-description .article-preview-footer h4, .popular-news .article-preview a .article-preview-description .article-preview-footer p {
   color: #999999;
+}
+
+.upcoming-events .column:nth-child(even) {
+  padding-left: 10px;
+}
+.upcoming-events .column:nth-child(odd) {
+  padding-right: 10px;
+}
+.upcoming-events .column:nth-child(n+3) {
+  margin-top: 20px;
+}
+.upcoming-events .event .event-image {
+  display: table;
+  width: 100%;
+  height: 135px;
+  padding: 0px 17px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: #f0f0f0;
+}
+.upcoming-events .event .event-image .additory-module h3 {
+  margin-bottom: 20px;
+  font-family: "Highway-medium", arial, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: white;
+}
+.upcoming-events .event .event-image .additory-module p {
+  font-family: "Highway-light", arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: white;
+}
+.upcoming-events .event .event-footer {
+  padding: 15px;
+  background-color: #1f1f1f;
+}
+.upcoming-events .event .event-footer a, .upcoming-events .event .event-footer p {
+  font-family: "Highway-light", arial, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #999999;
+}
+.upcoming-events .event .event-footer a {
+  text-align: right;
+  text-decoration: none;
+}
+.upcoming-events .event .event-footer a:hover {
+  color: #c3c3c3;
+  text-decoration: underline;
+}
+
+.base-module {
+  position: relative;
+  overflow: hidden;
+}
+
+.search-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  background-color: red;
 }
 
 /*# sourceMappingURL=style.css.map */
