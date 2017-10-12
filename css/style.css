@@ -159,13 +159,13 @@ body {
   background-repeat: no-repeat;
 }
 .upper-menu .internal-frame .icon.menu {
-  background-image: url("../images/icons/menu.png");
+  background-image: url("../images/icons/menu.svg");
 }
 .upper-menu .internal-frame .icon.loupe {
-  background-image: url("../images/icons/loupe.png");
+  background-image: url("../images/icons/loupe.svg");
 }
 .upper-menu .internal-frame .icon.bell {
-  background-image: url("../images/icons/bell.png");
+  background-image: url("../images/icons/bell.svg");
 }
 .upper-menu .internal-frame .icon:hover {
   cursor: pointer;
@@ -206,8 +206,9 @@ body {
   content: "";
   background-color: rgba(0, 0, 0, 0.1);
   background-repeat: no-repeat;
-  background-position: 0px 50%;
-  background-image: url("../images/icons/calendar.png");
+  background-position: 50% 50%;
+  background-image: url("../images/icons/calendar.svg");
+  background-size: 18px 18px;
 }
 
 .main-part {
@@ -229,6 +230,7 @@ body {
   padding-top: 30px;
   background-repeat: no-repeat;
   background-position: 50% 0%;
+  background-size: auto 20px;
   text-align: center;
   font-family: "Highway-thin", arial, sans-serif;
   font-size: 14px;
@@ -236,19 +238,19 @@ body {
   text-decoration: none;
 }
 .social-networks-module .social-networks-list .column .social-network-icon.facebook {
-  background-image: url("../images/social-networks/facebook.png");
+  background-image: url("../images/social-networks/facebook.svg");
 }
 .social-networks-module .social-networks-list .column .social-network-icon.twitter {
-  background-image: url("../images/social-networks/twitter.png");
+  background-image: url("../images/social-networks/twitter.svg");
 }
 .social-networks-module .social-networks-list .column .social-network-icon.vkontakte {
-  background-image: url("../images/social-networks/vkontakte.png");
+  background-image: url("../images/social-networks/vkontakte.svg");
 }
 .social-networks-module .social-networks-list .column .social-network-icon.telegram {
-  background-image: url("../images/social-networks/telegram.png");
+  background-image: url("../images/social-networks/telegram.svg");
 }
 .social-networks-module .social-networks-list .column .social-network-icon.instagram {
-  background-image: url("../images/social-networks/instagram.png");
+  background-image: url("../images/social-networks/instagram.svg");
 }
 
 .similar-news-module {
@@ -260,6 +262,9 @@ body {
 .similar-news-module .article-preview:not(:last-of-type) {
   margin-bottom: 30px;
 }
+.similar-news-module .article-preview .article-preview-image {
+  padding-right: 12px;
+}
 .similar-news-module .article-preview a .article-preview-description h3 {
   color: #222222;
 }
@@ -270,11 +275,17 @@ body {
 .article-preview:hover {
   cursor: pointer;
 }
+.article-preview .article-preview-image {
+  width: 30%;
+}
 .article-preview .article-preview-image img {
   width: 100%;
 }
 .article-preview a {
   display: block;
+}
+.article-preview a .article-preview-description {
+  width: 70%;
 }
 .article-preview a .article-preview-description h3 {
   margin-bottom: 10px;
@@ -359,7 +370,8 @@ body {
   padding-left: 20px;
   background-repeat: no-repeat;
   background-position: 0px 50%;
-  background-image: url("../images/icons/house.png");
+  background-image: url("../images/icons/house.svg");
+  background-size: auto 12px;
 }
 .internal-navigation a:not(.active):hover {
   text-decoration: underline;
@@ -396,7 +408,8 @@ body {
   height: 20px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url("../images/icons/ellipsis.png");
+  background-image: url("../images/icons/ellipsis.svg");
+  background-size: 14px 3px;
 }
 .articles-list article .article-header .article-button:hover {
   cursor: pointer;
@@ -458,12 +471,13 @@ body {
   padding-left: 25px;
   background-repeat: no-repeat;
   background-position: 0% 50%;
+  background-size: auto 14px;
 }
 .articles-list article .article-footer p.likes-amount {
-  background-image: url("../images/icons/thumbs-up.png");
+  background-image: url("../images/icons/heart.png");
 }
 .articles-list article .article-footer p.reviews-amount {
-  background-image: url("../images/icons/eye.png");
+  background-image: url("../images/icons/eye.svg");
 }
 .articles-list article .article-footer p:first-child {
   margin-right: 38px;
@@ -492,12 +506,15 @@ body {
 
 .right-side-module {
   position: relative;
+}
+.right-side-module .air-module {
   padding-left: 16px;
 }
 
 .air-module {
   position: absolute;
   top: 0%;
+  left: 0%;
   width: 100%;
   min-height: 2000px;
 }
@@ -508,7 +525,7 @@ body {
   position: -ms-sticky;
   position: -o-sticky;
   position: -webkit-sticky;
-  top: 120px;
+  top: 0px;
 }
 
 /* 
@@ -529,6 +546,7 @@ body {
 
 #background.active {
   display: block;
+  filter: blur(4px);
 }
 
 .modal-window {
@@ -552,6 +570,10 @@ body {
     Created on : 10.10.2017, 14:12:32
     Author     : Mikhail Dumchev
 */
+.fuzzy {
+  filter: blur(4px);
+}
+
 .disabled {
   overflow: hidden;
 }
@@ -562,7 +584,7 @@ body {
   left: 0px;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   overflow-y: scroll;
   z-index: 20;
   -webkit-transform-origin: 100% 0;
@@ -574,19 +596,13 @@ body {
   -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
-#pop-up-menu.active {
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-}
 #pop-up-menu .frame {
   padding: 114px 0px 60px;
 }
 
 .search-form div {
   position: relative;
-  margin: 95px 0px;
+  margin: 72px 0px 100px;
 }
 .search-form div:after {
   display: block;
@@ -612,17 +628,18 @@ body {
   color: #acacac;
 }
 
-.categories-list .column:not(.active) h2, .categories-list .column:not(.active) li {
+.categories-list .column:not(.active) li a {
   color: #acacac;
 }
 .categories-list .column:not(.active) h2 {
+  color: #acacac;
   border-bottom: 1px solid #333333;
 }
 .categories-list .column.active h2 {
   color: white;
   border-bottom: 1px solid #999999;
 }
-.categories-list .column.active li {
+.categories-list .column.active li a {
   color: #dddddd;
 }
 .categories-list .column.with-two-columns ul {
@@ -648,10 +665,10 @@ body {
   text-align: left;
 }
 .categories-list .column h2 {
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   font-size: 20px;
   font-weight: 300;
-  font-family: "Highway-medium", arial, sans-serif;
+  font-family: "Highway-thin", arial, sans-serif;
 }
 .categories-list .column ul {
   padding: 10px 0px 0px;
@@ -660,17 +677,16 @@ body {
 .categories-list .column ul li {
   margin-bottom: 10px;
   font-size: 16px;
-  font-family: "Highway-light", arial, sans-serif;
+  font-family: "Highway-thin", arial, sans-serif;
   font-weight: 300;
+}
+.categories-list .column ul li a {
+  text-decoration: none;
 }
 
 .popular-news .internal-frame,
 .upcoming-events .internal-frame {
   margin-bottom: 15px;
-}
-.popular-news .internal-frame .column-table,
-.upcoming-events .internal-frame .column-table {
-  width: 100%;
 }
 .popular-news .internal-frame .column-table h2,
 .upcoming-events .internal-frame .column-table h2 {
@@ -702,15 +718,12 @@ body {
   color: white;
 }
 .popular-news .article-preview .article-preview-image {
-  width: 64px;
+  max-width: 64px;
   height: 64px;
   margin-right: 15px;
 }
 .popular-news .article-preview a {
   padding: 8px;
-}
-.popular-news .article-preview a .article-preview-description {
-  width: 250px;
 }
 .popular-news .article-preview a .article-preview-description h3 {
   transition: 0.5s color;
@@ -777,9 +790,8 @@ body {
 
 .search-content {
   display: none;
-  position: absolute;
   width: 100%;
-  height: 300px;
+  height: 438px;
   background-color: red;
 }
 

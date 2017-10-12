@@ -71,7 +71,7 @@ body {
             background-repeat: no-repeat;
             @each $title in $icons {
                 &.#{$title} {
-                    background-image: url("../images/icons/#{$title}.png");
+                    background-image: url("../images/icons/#{$title}.svg");
                 }
             }
             &:hover {
@@ -113,8 +113,9 @@ body {
             content: "";
             background-color: rgba(0, 0, 0, 0.1);
             background-repeat: no-repeat;
-            background-position: 0px 50%;
-            background-image: url("../images/icons/calendar.png");
+            background-position: 50% 50%;
+            background-image: url("../images/icons/calendar.svg");
+            background-size: 18px 18px;
         }
     }
 }
@@ -133,6 +134,7 @@ body {
                 padding-top: 30px;
                 background-repeat: no-repeat;
                 background-position: 50% 0%;
+                background-size: auto 20px;
                 text-align: center;
                 font-family: $thinFont;
                 font-size: 14px;
@@ -140,7 +142,7 @@ body {
                 text-decoration: none;
                 @each $title in $socialNetworks {
                     &.#{$title} {
-                        background-image: url("../images/social-networks/#{$title}.png");
+                        background-image: url("../images/social-networks/#{$title}.svg");
                     }
                 }
             }
@@ -155,6 +157,9 @@ body {
     .article-preview {
         &:not(:last-of-type) {
             margin-bottom: 30px;
+        }
+        .article-preview-image {
+            padding-right: 12px;
         }
         a {
             .article-preview-description {
@@ -176,6 +181,7 @@ body {
         cursor: pointer;
     }
     .article-preview-image {
+        width: 30%;
         img {
             width: 100%;
         }
@@ -183,6 +189,7 @@ body {
     a {
         display: block;
         .article-preview-description {
+            width: 70%;
             h3 {
                 margin-bottom: 10px;
                 font-family: $lightFont;
@@ -270,7 +277,8 @@ body {
             padding-left: 20px;
             background-repeat: no-repeat;
             background-position: 0px 50%;
-            background-image: url("../images/icons/house.png");
+            background-image: url("../images/icons/house.svg");
+            background-size: auto 12px;
         }
         &:not(.active):hover {
             text-decoration: underline;
@@ -307,7 +315,8 @@ body {
                 height: 20px;
                 background-position: 50% 50%;
                 background-repeat: no-repeat;
-                background-image: url("../images/icons/ellipsis.png");
+                background-image: url("../images/icons/ellipsis.svg");
+                background-size: 14px 3px;
                 &:hover {
                     cursor: pointer;
                 }
@@ -368,12 +377,13 @@ body {
                     padding-left: 25px;
                     background-repeat: no-repeat;
                     background-position: 0% 50%;
+                    background-size: auto 14px;
                 }
                 &.likes-amount {
-                    background-image: url("../images/icons/thumbs-up.png");
+                    background-image: url("../images/icons/heart.png");
                 }
                 &.reviews-amount {
-                    background-image: url("../images/icons/eye.png");
+                    background-image: url("../images/icons/eye.svg");
                 }
                 &:first-child {
                     margin-right: 38px;
@@ -406,11 +416,14 @@ body {
 }
 .right-side-module {
     position: relative;
-    padding-left: 16px;
+    .air-module {
+        padding-left: 16px;
+    }
 }
 .air-module {
     position: absolute;
     top: 0%;
+    left: 0%;
     width: 100%;
     min-height: 2000px;
 }
@@ -420,7 +433,7 @@ body {
     position: -ms-sticky;
     position: -o-sticky;
     position: -webkit-sticky;
-    top: 120px;
+    top: 0px;
 }
 @import "_modal-window.scss";
 @import "_pop-up-menu.scss";
