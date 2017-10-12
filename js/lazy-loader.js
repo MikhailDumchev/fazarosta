@@ -10,7 +10,7 @@ function lazyLoader() {
     //Ссылка на контейнер;
     var container = new Object();
     //Класс целевого HTML-элемента;
-    var targetClassName = "article-preview-image";
+    var targetClassName = "additory-module";
     //Массив ссылок на целевые HTML-элементы (контейнеры для img);
     var targetsArray = new Array();
     /**
@@ -21,13 +21,14 @@ function lazyLoader() {
     var addImage = function(counter) {
         "use strict";
         var image = document.createElement("img");
-        if (targetsArray[counter].hasAttribute(altAttributeTitle))
-            image.alt = targetsArray[counter].getAttribute(altAttributeTitle);
-        else
-            image.alt = "Изображение";
+        if (targetsArray[counter].hasAttribute(altAttributeTitle)) image.alt = targetsArray[counter].getAttribute(altAttributeTitle);
+        else image.alt = "Изображение";
         image.src = targetsArray[counter].getAttribute(srcAttributeTitle);
         image.style.opacity = 0;
         targetsArray[counter].appendChild(image);
+        //Удаление дополнительных атрибутов;
+        targetsArray[counter].removeAttribute(srcAttributeTitle);
+        targetsArray[counter].removeAttribute(altAttributeTitle);
         opacityAnimationCall(image, duration, 1);
         window.setTimeout(function() {
             clearStyleAttribute(image, ["opacity"]);
