@@ -4,14 +4,14 @@
 */
 $itemsAmount: 5;
 .fuzzy {
+    position: relative;
     filter: blur(4px);
 }
 .disabled {
-    overflow: hidden;
-    //position: relative;
+    overflow-y: hidden;
 }
 #pop-up-menu {
-    //display: none;
+    display: none;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -19,15 +19,7 @@ $itemsAmount: 5;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     overflow-y: scroll;
-    z-index: 20;
-    -webkit-transform-origin: 100% 0;
-    transform-origin: 100% 0;
-    -webkit-transition-property: height, width, top, right;
-    transition-property: height, width, top, right;
-    -webkit-transition-duration: 0.5s;
-    transition-duration: 0.5s;
-    -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-    transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+    z-index: 5;
     .frame {
         padding: 114px 0px 60px;
     }
@@ -136,7 +128,7 @@ $itemsAmount: 5;
         margin-bottom: 15px;
         .column-table {
             h2 {
-                font-family: $mediumFont;
+                font-family: $thinFont;
                 font-size: 20px;
                 font-weight: 300;
                 color: rgb(255, 255, 255);

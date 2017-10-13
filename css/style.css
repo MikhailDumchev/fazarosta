@@ -129,11 +129,21 @@ body {
   left: 0px;
   width: 100%;
   padding: 20px 0px 19px;
-  border-bottom: 1px solid #eeeeee;
   background-color: white;
   z-index: 10;
+  border-bottom: 1px solid #eeeeee;
+}
+.upper-menu.black {
+  background-color: black;
+}
+.upper-menu.black .internal-frame a:not(.button) h1 {
+  color: white;
+}
+.upper-menu.black .internal-frame a:not(.button) h1:before {
+  background-position: 0px -30px;
 }
 .upper-menu .internal-frame {
+  position: relative;
   max-width: 1180px;
   min-width: 980px;
   margin: 0px auto;
@@ -147,15 +157,34 @@ body {
 .upper-menu .internal-frame a:not(.button) {
   display: inline-block;
   margin-left: 103px;
+  text-decoration: none;
 }
-.upper-menu .internal-frame a:not(.button) .main-image:hover {
+.upper-menu .internal-frame a:not(.button) h1 {
+  position: relative;
+  padding-left: 40px;
+  font-family: "Highway-light", arial, sans-serif;
+  font-size: 24px;
+  color: black;
+  transition: 0.5s color;
+}
+.upper-menu .internal-frame a:not(.button) h1:before {
+  position: absolute;
+  left: 0px;
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url("../images/logotype.png");
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+}
+.upper-menu .internal-frame a:not(.button) h1:hover {
   cursor: pointer;
 }
 .upper-menu .internal-frame .icon {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-color: white;
   background-repeat: no-repeat;
 }
 .upper-menu .internal-frame .icon.menu {
@@ -571,14 +600,16 @@ body {
     Author     : Mikhail Dumchev
 */
 .fuzzy {
+  position: relative;
   filter: blur(4px);
 }
 
 .disabled {
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 #pop-up-menu {
+  display: none;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -586,15 +617,7 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   overflow-y: scroll;
-  z-index: 20;
-  -webkit-transform-origin: 100% 0;
-  transform-origin: 100% 0;
-  -webkit-transition-property: height, width, top, right;
-  transition-property: height, width, top, right;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  z-index: 5;
 }
 #pop-up-menu .frame {
   padding: 114px 0px 60px;
@@ -690,7 +713,7 @@ body {
 }
 .popular-news .internal-frame .column-table h2,
 .upcoming-events .internal-frame .column-table h2 {
-  font-family: "Highway-medium", arial, sans-serif;
+  font-family: "Highway-thin", arial, sans-serif;
   font-size: 20px;
   font-weight: 300;
   color: white;

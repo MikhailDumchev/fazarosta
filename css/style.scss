@@ -41,10 +41,24 @@ body {
     left: 0px;
     width: 100%;
     padding: 20px 0px 19px;
-    border-bottom: 1px solid $borderColor;
     background-color: rgb(255, 255, 255);
     z-index: 10;
+    border-bottom: 1px solid $borderColor;
+    &.black {
+        background-color: rgb(0, 0, 0);
+        .internal-frame {
+            a:not(.button) {
+                h1 {
+                    color: rgb(255, 255, 255);
+                    &:before {
+                        background-position: 0px -30px;
+                    }
+                }
+            }
+        }
+    }
     .internal-frame {
+        position: relative;
         max-width: 1180px;
         min-width: 980px;
         margin: 0px auto;
@@ -57,7 +71,25 @@ body {
         a:not(.button) {
             display: inline-block;
             margin-left: 103px;
-            .main-image {
+            text-decoration: none;
+            h1 {
+                position: relative;
+                padding-left: 40px;
+                font-family: $lightFont;
+                font-size: 24px;
+                color: rgb(0, 0, 0);
+                transition: 0.5s color;
+                &:before {
+                    position: absolute;
+                    left: 0px;
+                    content: "";
+                    display: block;
+                    width: 30px;
+                    height: 30px;
+                    background-image: url("../images/logotype.png");
+                    background-position: 0% 0%;
+                    background-repeat: no-repeat;
+                }
                 &:hover {
                     cursor: pointer;
                 }
@@ -67,7 +99,6 @@ body {
             display: inline-block;
             width: 20px;
             height: 20px;
-            background-color: rgb(255, 255, 255);
             background-repeat: no-repeat;
             @each $title in $icons {
                 &.#{$title} {
