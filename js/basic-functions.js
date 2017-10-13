@@ -26,6 +26,9 @@ function clearStyleAttribute(element, properties) {
                 case "z-index":
                     pattern = /\s*z-index:\s*[0-9]+;\s*/ig;
                     break;
+                case "padding":
+                    pattern = /\s*padding(-top|-left|-right|-bottom):\s*(-)?[0-9]+(\.[0-9]+)*(px|%);\s*/ig;
+                    break;
                 default:
                     break;
             }
